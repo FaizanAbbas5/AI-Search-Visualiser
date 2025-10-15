@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIMA Search Visualiser</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AIMA Search Problems Visualiser</h1>
+            <p class="subtitle">Interactive visualisation of classic AI search problems</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Left Panel: Controls -->
+            <div class="panel">
+                <h3>Controls</h3>
+                
+                <div class="control-group">
+                    <label for="problem-select">Problem Type</label>
+                    <select id="problem-select">
+                        <option value="8puzzle">8-Puzzle</option>
+                        <option value="hanoi">Tower of Hanoi</option>
+                        <option value="jugs">Water Jugs</option>
+                        <option value="nqueens">N-Queens</option>
+                    </select>
+                </div>
+
+                <div id="problem-config"></div>
+
+                <div class="control-group">
+                    <label for="algorithm">Search Algorithm</label>
+                    <select id="algorithm">
+                        <option value="bfs">Breadth-First Search (BFS)</option>
+                        <option value="dfs">Depth-First Search (DFS)</option>
+                        <option value="astar">A* Search</option>
+                        <option value="greedy">Greedy Best-First</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label for="speed">Animation Speed</label>
+                    <input type="range" id="speed" min="1" max="100" value="50">
+                </div>
+
+                <button class="btn-primary" id="solve-btn">▶ Solve</button>
+                <button class="btn-secondary" id="randomize-btn">🎲 Randomize</button>
+                <button class="btn-secondary" id="reset-btn">↺ Reset</button>
+                <button class="btn-secondary" id="stop-btn">⏹ Stop</button>
+            </div>
+
+            <!-- Middle Panel: Visualisation -->
+            <div class="panel">
+                <h3>Visualisation</h3>
+                <div id="problem-description" class="problem-description"></div>
+                <div class="visualisation-area">
+                    <div id="visualisation" class="problem-visual"></div>
+                </div>
+            </div>
+
+            <!-- Right Panel: Stats -->
+            <div class="panel">
+                <h3>Statistics</h3>
+                <div class="stat-item">
+                    <span class="stat-label">Nodes Explored:</span>
+                    <span class="stat-value" id="explored">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Frontier Size:</span>
+                    <span class="stat-value" id="frontier">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Solution Depth:</span>
+                    <span class="stat-value" id="depth">-</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Time Elapsed:</span>
+                    <span class="stat-value" id="time">0.00s</span>
+                </div>
+                <div id="status" class="status idle">Ready to solve!</div>
+
+                <h3 style="margin-top: 30px;">Solution Path</h3>
+                <div id="path" class="path-visualisation">
+                    <p style="color: #999; text-align: center;">Solution will appear here</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core Framework -->
+    <script src="js/core/problem.js"></script>
+    <script src="js/core/search.js"></script>
+    
+    <!-- Problem Definitions -->
+    <script src="js/problems/eight-puzzle.js"></script>
+    <script src="js/problems/tower-of-hanoi.js"></script>
+    <script src="js/problems/water-jugs.js"></script>
+    <script src="js/problems/n-queens.js"></script>
+    
+    <!-- Visualisers -->
+    <script src="js/visualisers/puzzle-visualiser.js"></script>
+    <script src="js/visualisers/hanoi-visualiser.js"></script>
+    <script src="js/visualisers/jugs-visualiser.js"></script>
+    <script src="js/visualisers/queens-visualiser.js"></script>
+    
+    <!-- Main Application -->
+    <script src="js/app.js"></script>
+</body>
+</html>
