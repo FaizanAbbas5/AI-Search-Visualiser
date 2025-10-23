@@ -61,7 +61,7 @@ A modern web browser. No installation or build process required.
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/aima-search-visualiser.git
+   git clone https://github.com/FaizanAbbas5/AI-Search-Visualiser.git
    cd aima-search-visualiser
    ```
 
@@ -378,7 +378,7 @@ This project is licensed under the MIT Licence:
 ```
 MIT Licence
 
-Copyright (c) 2025 [Your Name]
+Copyright (c) 2025 [Faizan Abbas]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
